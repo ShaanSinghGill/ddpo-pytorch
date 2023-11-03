@@ -118,7 +118,7 @@ def llava_bertscore():
     from io import BytesIO
     import pickle
 
-    batch_size = 16
+    batch_size = 16 
     url = "http://127.0.0.1:8085"
     sess = requests.Session()
     retries = Retry(total=1000, backoff_factor=1, status_forcelist=[500], allowed_methods=False)
