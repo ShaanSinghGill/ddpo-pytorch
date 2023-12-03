@@ -16,9 +16,9 @@ def _load_lines(path):
     """
     if not os.path.exists(path):
         newpath = ASSETS_PATH.joinpath(path)
-    if not os.path.exists(newpath):
-        raise FileNotFoundError(f"Could not find {path} or ddpo_pytorch.assets/{path}")
-    path = newpath
+    # if not os.path.exists(newpath):
+    #     raise FileNotFoundError(f"Could not find {path} or ddpo_pytorch.assets/{path}")
+    # path = newpath
     with open(path, "r") as f:
         return [line.strip() for line in f.readlines()]
 
@@ -43,6 +43,17 @@ def imagenet_dogs():
 def simple_animals():
     return from_file("simple_animals.txt")
 
+def counting_ones():
+    return from_file("counting1.txt")
+
+def counting_fives():
+    return from_file("counting5.txt")
+
+def counting_fivesMonkey():
+    return from_file("counting5Monkey.txt")
+
+def counting_mixed():
+    return from_file("countingMixed.txt")
 
 def nouns_activities(nouns_file, activities_file):
     nouns = _load_lines(nouns_file)
